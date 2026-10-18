@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "OgClubToken",
+    "name": "Og Club",
+    "symbol": "OG",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x612a9bb008e16ef2d24f41dae9fc661831d93367"
+  },
+  "notes": "OgClubToken (src/OgClubToken.sol) is a plain fixed-supply ERC-20 built on OpenZeppelin v5.4.0 ERC20. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 OG (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which at launch is the ProjectFactory; the factory then pays the supply out. There is no owner, minter, pause, blocklist, freeze, burnFrom, fee, tax, reflection, hook or upgrade path, so every transfer moves exactly the amount requested and the launch flows (factory to distributor, distributor to claimants, pool seed and swaps through the Uniswap v4 PoolManager) arrive whole without any exemptions. totalSupply can never rise after construction. The launch deploys no application contracts. The pool pairs with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7; the deployer derives the opening price from economics.initialMarketCapWei and the supply, so pool.initialPrice is provenance only."
+}
